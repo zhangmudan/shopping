@@ -1,0 +1,17 @@
+.search {
+  height: 100rpx;
+  background-color: #ea4350;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-in {
+  width: 700rpx;
+  height: 80rpx;
+  font-size: 35rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

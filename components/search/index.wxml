@@ -1,0 +1,6 @@
+<view class="search">
+  <view class="search-in">
+    <icon type="search" />
+    搜索
+  </view>
+</view>
