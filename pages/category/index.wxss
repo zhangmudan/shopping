@@ -1,1 +1,44 @@
-/* pages/category/index.wxss */
+.careList {
+  display: flex;
+  justify-content: space-between;
+}
+.careList .left {
+  width: 182rpx;
+  background-color: #f3f3f3;
+  text-align: center;
+}
+.careList .left .left-nav {
+  font-size: 28rpx;
+  color: #585858;
+  line-height: 43rpx;
+  margin: 17rpx 0;
+}
+.careList .left .active {
+  color: #ea4350;
+  border-left: 4rpx solid #ea4350;
+}
+.careList .right {
+  flex: 1;
+}
+.careList .right .right-title {
+  text-align: center;
+  line-height: 37rpx;
+  font-size: 30rpx;
+  color: #575757;
+}
+.careList .right .right-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-bottom: 21rpx;
+}
+.careList .right .right-body .body-list {
+  font-size: 25rpx;
+  color: #2e2e2e;
+  margin: 0 35rpx;
+  text-align: center;
+}
+.careList .right .right-body .img {
+  width: 120rpx;
+  height: 120rpx;
+}
