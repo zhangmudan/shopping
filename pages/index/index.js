@@ -23,6 +23,13 @@ Page({
       success: (result) => {
         // console.log(result);
         const navData = result.data.message
+        //把后端返回的地址替换成项目路径
+        navData.forEach(item => {
+          if (item.navigator_url) {
+            item.navigator_url = item.navigator_url.replace('/main', '/index')
+          }
+
+        });
         this.setData({
           navData
         })
@@ -35,6 +42,11 @@ Page({
       success: (result) => {
         // console.log(result);
         const floorData = result.data.message
+        floorData.forEach(v => {
+          if (v.product_list.navigator_url) {
+            v.product_list.navigator_url = v.product_list.navigator_url.replace('?', '/index?')
+          }
+        })
         this.floorData = floorData.map((item, index) => {
           item.id = index
           return item

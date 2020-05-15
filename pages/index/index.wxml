@@ -14,7 +14,7 @@
     <navigator open-type="{{item.open_type}}" url="{{item.navigator_url}}" wx:if="{{item.navigator_url}}">
       <image src="{{item.image_src}}" class="nav-images" />
     </navigator>
-    <image src="{{item.image_src}}" class="nav-images" />
+    <image src="{{item.image_src}}" class="nav-images" wx:else />
   </block>
 </view>
 <!-- 楼层 -->

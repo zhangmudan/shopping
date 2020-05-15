@@ -17,7 +17,7 @@
       <view class="right-body">
         <view wx:for="{{v.children}}" class="body-list" wx:key="cat_id" wx:for-item="i">
           <image class="img" src="{{i.cat_icon}}" />
-          <view>曲面电视</view>
+          <view>{{i.cat_name}}</view>
         </view>
       </view>
     </block>
