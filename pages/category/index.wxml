@@ -1,14 +1,16 @@
 <search />
 <view class="careList">
-  <view class="left">
+  <!-- 分类左边 -->
+  <scroll-view scroll-y class="left">
     <block wx:for="{{cateData}}" wx:key="cat_id">
-      <view class="left-nav {{item.cat_id == items.cat_id?'active':''}} " data-index="{{index}}" bindtap="navtap">
+      <view class="left-nav {{activeIndex==index?'active':''}} " data-index="{{index}}" bindtap="navtap">
         {{item.cat_name}}
       </view>
     </block>
-  </view>
-  <view class="right">
-    <block wx:for="{{items.children}}" wx:key="cat_id" wx:for-item="v">
+  </scroll-view>
+  <!-- 分类右边 -->
+  <scroll-view scroll-y class="right">
+    <block wx:for="{{cateRight}}" wx:key="cat_id" wx:for-item="v">
       <view class="right-title">
         /
         <text>{{v.cat_name}}</text>
@@ -21,5 +23,5 @@
         </view>
       </view>
     </block>
-  </view>
+  </scroll-view>
 </view>

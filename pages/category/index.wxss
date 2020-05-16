@@ -4,14 +4,16 @@
 }
 .careList .left {
   width: 182rpx;
+  height: calc(100vh - 100rpx);
   background-color: #f3f3f3;
-  text-align: center;
 }
 .careList .left .left-nav {
   font-size: 28rpx;
   color: #585858;
-  line-height: 43rpx;
-  margin: 17rpx 0;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .careList .left .active {
   color: #ea4350;
@@ -19,10 +21,13 @@
 }
 .careList .right {
   flex: 1;
+  height: calc(100vh - 100rpx);
 }
 .careList .right .right-title {
-  text-align: center;
-  line-height: 37rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 30rpx;
   color: #575757;
 }

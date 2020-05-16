@@ -3,13 +3,16 @@
   justify-content: space-between;
   .left {
     width: 182rpx;
+    // 坑点：calc 里面的减号两边至少打一个空格
+    height: calc(100vh - 100rpx);
     background-color: #f3f3f3;
-    text-align: center;
     .left-nav {
       font-size: 28rpx;
       color: #585858;
-      line-height: 43rpx;
-      margin: 17rpx 0;
+      height: 80rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .active {
       color: #ea4350;
@@ -18,9 +21,14 @@
   }
   .right {
     flex: 1;
+    //~"" 输出源文件 因为在less文件中不同单位运算有问题,防止出bug,要输出源文件
+    // 坑点：calc 里面的减号两边至少打一个空格
+    height: ~"calc(100vh - 100rpx)";
     .right-title {
-      text-align: center;
-      line-height: 37rpx;
+      height: 80rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: 30rpx;
       color: #575757;
     }
