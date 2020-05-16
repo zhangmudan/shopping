@@ -1,1 +1,4 @@
 @import "/styles/iconfont.wxss";
+page {
+  --publicColor: #eb4450;
+}

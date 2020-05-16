@@ -1,2 +1,16 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<search />
+<view class="nav ">
+  <view wx:for="{{nav}}" wx:key="*this" class="nav_list {{navindex==index?'active':''}}" bindtap='navIndex' data-nav='{{index}}'>
+    {{item}}
+  </view>
+</view>
+<block wx:for="{{goodsList.goods}}" wx:key="goods_id">
+  <view class="list">
+    <image src="../../images/default.png" wx:if="{{item.goods_small_logo==''}}" class="default_img" />
+    <image src="{{item.goods_small_logo}}" class="list_img" wx:else />
+    <view class="list_right">
+      <view>{{item.goods_name}}</view>
+      <text class="price">¥{{item.goods_price}}</text>
+    </view>
+  </view>
+</block>

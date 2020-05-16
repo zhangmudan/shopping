@@ -15,8 +15,16 @@
       align-items: center;
     }
     .active {
-      color: #ea4350;
-      border-left: 4rpx solid #ea4350;
+      color: var(--publicColor);
+      position: relative;
+      &::before {
+        content: "";
+        width: 4rpx;
+        height: 60%;
+        background-color: currentColor;
+        position: absolute;
+        left: 0;
+      }
     }
   }
   .right {
@@ -30,18 +38,25 @@
       justify-content: center;
       align-items: center;
       font-size: 30rpx;
-      color: #575757;
+      &::before,
+      &::after {
+        content: "/";
+        color: #ccc;
+        padding: 0 10rpx;
+      }
     }
     .right-body {
       display: flex;
       flex-wrap: wrap;
-      justify-content: start;
-      margin-bottom: 21rpx;
       .body-list {
-        font-size: 25rpx;
-        color: #2e2e2e;
-        margin: 0 35rpx;
-        text-align: center;
+        width: 33.3333%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        font-size: 24rpx;
       }
       .img {
         width: 120rpx;

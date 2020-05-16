@@ -9,17 +9,13 @@
     </block>
   </scroll-view>
   <!-- 分类右边 -->
-  <scroll-view scroll-y class="right">
-    <block wx:for="{{cateRight}}" wx:key="cat_id" wx:for-item="v">
-      <view class="right-title">
-        /
-        <text>{{v.cat_name}}</text>
-        /
-      </view>
+  <scroll-view scroll-y scroll-top="{{scropTop}}" class="right">
+    <block wx:for="{{cateRight}}" wx:key="cat_id">
+      <view class="right-title">{{item.cat_name}}</view>
       <view class="right-body">
-        <view wx:for="{{v.children}}" class="body-list" wx:key="cat_id" wx:for-item="i">
-          <image class="img" src="{{i.cat_icon}}" />
-          <view>{{i.cat_name}}</view>
+        <view wx:for="{{item.children}}" class="body-list" wx:key="cat_id" wx:for-item="v">
+          <image class="img" src="{{v.cat_icon}}" />
+          <view>{{v.cat_name}}</view>
         </view>
       </view>
     </block>
