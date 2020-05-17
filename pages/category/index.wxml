@@ -14,8 +14,10 @@
       <view class="right-title">{{item.cat_name}}</view>
       <view class="right-body">
         <view wx:for="{{item.children}}" class="body-list" wx:key="cat_id" wx:for-item="v">
-          <image class="img" src="{{v.cat_icon}}" />
-          <view>{{v.cat_name}}</view>
+          <navigator url="/pages/goods_list/index?cid={{item.cat_id}}">
+            <image class="img" src="{{v.cat_icon}}" />
+            <view>{{v.cat_name}}</view>
+          </navigator>
         </view>
       </view>
     </block>

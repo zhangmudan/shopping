@@ -9,12 +9,19 @@ Page({
     navindex: 0,
     goodsList: {}
   },
-
+  params: {
+    query: '',
+    cid: '',
+    pagenum: 1,
+    pagesize: 20
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    axios({ url: '/goods/search', data: { cid: 5 } }).then(res => {
+    this.params.cid = options.cid || ""
+    this.params.query = options.query || ""
+    axios({ url: '/goods/search', data: this.params }).then(res => {
       // console.log(res);
       const goodsList = res
       this.setData({

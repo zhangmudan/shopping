@@ -22,7 +22,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -63,7 +63,7 @@
 					"id": 0,
 					"name": "pages/goods_list/index",
 					"pathName": "pages/goods_list/index",
-					"query": "",
+					"query": "cid=5",
 					"scene": null
 				}
 			]

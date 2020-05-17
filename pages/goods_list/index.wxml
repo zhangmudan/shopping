@@ -1,16 +1,17 @@
 <search />
 <view class="nav ">
-  <view wx:for="{{nav}}" wx:key="*this" class="nav_list {{navindex==index?'active':''}}" bindtap='navIndex' data-nav='{{index}}'>
-    {{item}}
-  </view>
+  <block wx:for="{{nav}}" wx:key="*this">
+    <view class="nav_list {{navindex==index?'active':''}}" bindtap='navIndex' data-nav='{{index}}'>
+      {{item}}
+    </view>
+  </block>
 </view>
 <block wx:for="{{goodsList.goods}}" wx:key="goods_id">
   <view class="list">
-    <image src="../../images/default.png" wx:if="{{item.goods_small_logo==''}}" class="default_img" />
-    <image src="{{item.goods_small_logo}}" class="list_img" wx:else />
+    <image src="{{item.goods_small_logo || '/images/default.png'}} " class="list_img" />
     <view class="list_right">
       <view>{{item.goods_name}}</view>
-      <text class="price">¥{{item.goods_price}}</text>
+      <view class="price">¥{{item.goods_price}}</view>
     </view>
   </view>
 </block>
