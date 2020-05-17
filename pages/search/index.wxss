@@ -1,1 +1,28 @@
-/* pages/search/index.wxss */
+.nav {
+  display: flex;
+  margin: 15rpx 18rpx;
+  position: relative;
+}
+.nav .search {
+  flex: 1;
+  height: 61rpx;
+  border-radius: 27rpx;
+  font-size: 25rpx;
+  background-color: #e7e7e7;
+  margin-right: 15rpx;
+  padding-left: 57rpx;
+}
+.nav icon {
+  position: absolute;
+  top: 8rpx;
+  left: 7rpx;
+}
+.nav .btn {
+  width: 101rpx;
+  height: 61rpx;
+  line-height: 61rpx;
+  background-color: #ea4350;
+  color: #fff;
+  padding: 0;
+  font-size: 25rpx;
+}

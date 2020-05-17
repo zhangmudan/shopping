@@ -1,2 +1,31 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<swiper indicator-dots indicator-active-color="#ea4350" class="slider">
+  <block wx:for="{{goodsList.pics}}" wx:key="pics_id">
+    <swiper-item>
+      <image class="slider-images" src="{{item.pics_big}}" bindtap='bigImage' data-image='{{item.pics_big}}' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="price">
+  <view class="price_left">¥3999</view>
+  <view class="price_right">
+    <icon class="iconfont icon-icon-test">
+      <icon class="iconfont icon-shoucang" />
+    </icon>
+  </view>
+</view>
+<view class="title">{{goodsList.goods_name}}</view>
+<view class="list">图文详情</view>
+<rich-text class="article" nodes="{{goodsList.goods_introduce}}"></rich-text>
+<view class="none"></view>
+<view class="footer">
+  <view class="footer_kefu">
+    <icon class="iconfont icon-service"></icon>
+    客服
+  </view>
+  <view class="footer_cart">
+    <icon class="iconfont icon-gouwuche-01"></icon>
+    购物车
+  </view>
+  <view class="footer_join">加入购物车</view>
+  <view class="footer_buy">立即购买</view>
+</view>

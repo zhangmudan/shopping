@@ -1,7 +1,7 @@
 <!-- 搜索框 -->
 <search />
 <!-- 轮播图 -->
-<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" indicator-active-color="#ea4350" class="slider">
+<swiper indicator-dots autoplay circular indicator-active-color="#ea4350" class="slider">
   <block wx:for="{{swiperData}}" wx:key="goods_id">
     <swiper-item>
       <image class="slider-images" src="{{item.image_src}}" />

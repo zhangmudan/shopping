@@ -6,12 +6,12 @@
     </view>
   </block>
 </view>
-<block wx:for="{{goodsList.goods}}" wx:key="goods_id">
-  <view class="list">
+<block wx:for="{{goodsList}}" wx:key="goods_id">
+  <navigator class="list" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
     <image src="{{item.goods_small_logo || '/images/default.png'}} " class="list_img" />
     <view class="list_right">
       <view>{{item.goods_name}}</view>
       <view class="price">¥{{item.goods_price}}</view>
     </view>
-  </view>
+  </navigator>
 </block>
