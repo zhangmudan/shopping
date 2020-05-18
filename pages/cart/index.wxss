@@ -1,1 +1,81 @@
-/* pages/cart/index.wxss */
+.goods {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18rpx 25rpx;
+}
+.goods .rad {
+  width: 35rpx;
+  height: 35rpx;
+  padding-right: 35rpx;
+}
+.goods .list {
+  flex: 1;
+  display: flex;
+}
+.goods .list .list_img,
+.goods .list .default_img {
+  width: 191rpx;
+  height: 191rpx;
+  margin: 10rpx 0;
+}
+.goods .list .list_right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 29rpx;
+  font-size: 24rpx;
+  color: #434343;
+  padding: 27rpx 0;
+}
+.goods .list .list_right .price {
+  color: var(--publicColor);
+}
+.footer {
+  height: 83rpx;
+  width: 750rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+.footer .footer_left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.footer .footer_left .footer_rad {
+  padding: 0 24rpx;
+}
+.footer .footer_left .all {
+  padding-right: 36rpx;
+  font-size: 21rpx;
+  color: #8a8a8a;
+}
+.footer .footer_left .add {
+  width: 78rpx;
+  height: 37rpx;
+  color: #292929;
+  font-size: 26rpx;
+}
+.footer .footer_left .footer_price {
+  color: var(--publicColor);
+  font-size: 28rpx;
+}
+.footer .footer_left .footer_price::before {
+  content: "¥";
+  font-size: 85%;
+}
+.footer .footer_right {
+  width: 150rpx;
+  height: 52rpx;
+  line-height: 48rpx;
+  border-radius: 26rpx;
+  background-color: var(--publicColor);
+  color: #fff;
+  font-size: 21rpx;
+  text-align: center;
+  margin-right: 23rpx;
+}

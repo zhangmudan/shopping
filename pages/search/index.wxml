@@ -1,5 +1,5 @@
 <view class="nav">
-  <input class="search" placeholder="输入商品名" />
+  <input class="search" placeholder="输入商品名" bindinput='inputValue' value="{{query}}" />
   <icon type="search"></icon>
-  <button class="btn" size="mini">搜索</button>
+  <button class="btn" size="mini" bindtap='searchList'>搜索</button>
 </view>

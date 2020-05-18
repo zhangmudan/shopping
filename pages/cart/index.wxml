@@ -1,2 +1,19 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="goods">
+  <radio class="rad" color="#e03440" />
+  <view class="list">
+    <image src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000160455569_1_400x400.jpg " class="list_img" />
+    <view class="list_right">
+      <view>创维（Skyworth）42X6 42英寸10核智能酷开网络平板液晶</view>
+      <view class="price">¥3999</view>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <view class="footer_left">
+    <radio class="footer_rad" color="#e03440" />
+    <view class="all">全选</view>
+    <view class="add">合计:</view>
+    <view class="footer_price">3999</view>
+  </view>
+  <view class="footer_right">去结算(12)</view>
+</view>
