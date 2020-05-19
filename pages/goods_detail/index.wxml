@@ -24,12 +24,12 @@
   <view class="footer_kefu">
     <view class="iconfont icon-service"></view>
     联系客服
-    <!-- <button class="kefu">客服</button> -->
+    <button class="kefu" open-type="contact"></button>
   </view>
-  <view class="footer_cart">
+  <view class="footer_cart" bindtap='goToCart'>
     <view class="iconfont icon-gouwuche-01"></view>
     购物车
   </view>
-  <view class="footer_join">加入购物车</view>
-  <view class="footer_buy">立即购买</view>
+  <view class="footer_join" bindtap='addCart'>加入购物车</view>
+  <view class="footer_buy" bindtap='buyNow'>立即购买</view>
 </view>

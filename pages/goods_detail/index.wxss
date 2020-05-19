@@ -65,6 +65,9 @@
 .none {
   padding-bottom: 120rpx;
 }
+.my_img {
+  vertical-align: top;
+}
 .footer {
   height: 94rpx;
   width: 750rpx;
@@ -82,12 +85,23 @@
   justify-content: center;
   align-items: center;
   font-size: 25rpx;
+  position: relative;
 }
 .footer .footer_kefu .icon-gouwuche-01,
 .footer .footer_cart .icon-gouwuche-01,
 .footer .footer_kefu .icon-service,
 .footer .footer_cart .icon-service {
   font-size: 40rpx;
+}
+.footer .footer_kefu .kefu,
+.footer .footer_cart .kefu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  padding: 0;
 }
 .footer .footer_join,
 .footer .footer_buy {

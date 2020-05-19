@@ -3,6 +3,7 @@
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "商品列表",
   "usingComponents": {
-    "search": "/components/search/index"
+    "search": "/components/search/index",
+    "goods-item": "/components/goods-item/index"
   }
 }

@@ -1,13 +1,16 @@
-<view class="goods">
-  <radio class="rad" color="#e03440" />
-  <view class="list">
-    <image src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000160455569_1_400x400.jpg " class="list_img" />
-    <view class="list_right">
-      <view>创维（Skyworth）42X6 42英寸10核智能酷开网络平板液晶</view>
-      <view class="price">¥3999</view>
+<block wx:for="{{goods_item}}" wx:key="goods_id">
+  <view class="goods">
+    <radio class="rad" color="#e03440" checked='{{item.isSelect}}' />
+    <goods-item item="{{item}}" />
+    <view class="count">
+      <view class="reduce" bindtap="reduce_goods" data-index="{{index}}" data-count='{{item.count}}'>
+        -
+      </view>
+      <view class="num">{{item.count}}</view>
+      <view class="add" bindtap="add_goods" data-index='{{index}}'>+</view>
     </view>
   </view>
-</view>
+</block>
 <view class="footer">
   <view class="footer_left">
     <radio class="footer_rad" color="#e03440" />

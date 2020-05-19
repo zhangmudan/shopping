@@ -1,0 +1,23 @@
+.list {
+  display: flex;
+  margin: 0 26rpx;
+}
+.list .list_img,
+.list .default_img {
+  width: 191rpx;
+  height: 191rpx;
+  margin: 10rpx 0;
+}
+.list .list_right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 29rpx;
+  font-size: 24rpx;
+  color: #434343;
+  padding: 27rpx 0;
+}
+.list .list_right .price {
+  color: var(--publicColor);
+}

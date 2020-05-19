@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    goods_item: []
   },
 
   /**
@@ -15,52 +15,41 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    const goods_item = wx.getStorageSync('cart') || [];
+    this.setData({
+      goods_item
+    })
+  },
+  add_goods(e) {
+    const index = e.currentTarget.dataset.index
+    this.data.goods_item[index].count += 1
+    this.setData({
+      goods_item: this.data.goods_item
+    })
 
   },
+  reduce_goods(e) {
+    const index = e.currentTarget.dataset.index
+    const count = e.currentTarget.dataset.count
+    if (count === 1) {
+      wx.showToast({
+        title: '数量不能再减了哦',
+        icon: 'none',
+      });
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    } else {
+      this.data.goods_item[index].count -= 1
+      this.setData({
+        goods_item: this.data.goods_item
+      })
+    }
   }
+
+
 })
