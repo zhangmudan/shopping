@@ -6,24 +6,28 @@
   </block>
 </swiper>
 <view class="price">
-  <view class="price_left">¥3999</view>
+  <view class="price_left">{{goodsList.goods_price}}</view>
   <view class="price_right">
-    <icon class="iconfont icon-icon-test">
-      <icon class="iconfont icon-shoucang" />
-    </icon>
+    <view class="iconfont icon-icon-test">
+      <!-- 分享 -->
+      <button class="share" open-type="share"></button>
+    </view>
+    <view class="iconfont icon-shoucang"></view>
   </view>
 </view>
 <view class="title">{{goodsList.goods_name}}</view>
+<view class="divider"></view>
 <view class="list">图文详情</view>
 <rich-text class="article" nodes="{{goodsList.goods_introduce}}"></rich-text>
 <view class="none"></view>
 <view class="footer">
   <view class="footer_kefu">
-    <icon class="iconfont icon-service"></icon>
-    客服
+    <view class="iconfont icon-service"></view>
+    联系客服
+    <!-- <button class="kefu">客服</button> -->
   </view>
   <view class="footer_cart">
-    <icon class="iconfont icon-gouwuche-01"></icon>
+    <view class="iconfont icon-gouwuche-01"></view>
     购物车
   </view>
   <view class="footer_join">加入购物车</view>

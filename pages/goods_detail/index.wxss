@@ -8,22 +8,40 @@
 .price {
   display: flex;
   justify-content: space-between;
-  padding: 19rpx 37rpx;
+  align-items: center;
+  padding: 19rpx 37rpx 0;
 }
 .price .price_left {
   color: var(--publicColor);
   font-size: 36rpx;
 }
+.price .price_left::before {
+  content: "¥";
+  font-size: 85%;
+}
+.price .price_right {
+  display: flex;
+}
 .price .price_right .icon-icon-test,
 .price .price_right .icon-shoucang {
   color: #707070;
   font-size: 60rpx;
+  position: relative;
+}
+.price .price_right .share {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0;
 }
 .price .price_right .icon-shoucang {
-  margin-left: 46rpx;
+  margin-left: 15rpx;
 }
 .title {
-  padding: 0 33rpx;
+  padding: 33rpx;
   font-size: 30rpx;
   color: #434343;
   line-height: 42rpx;

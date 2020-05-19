@@ -2,3 +2,7 @@
 page {
   --publicColor: #eb4450;
 }
+.divider {
+  height: 20rpx;
+  background-color: #f9f9f9;
+}
