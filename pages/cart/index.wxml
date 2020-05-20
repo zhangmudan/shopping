@@ -1,22 +1,28 @@
-<block wx:for="{{goods_item}}" wx:key="goods_id">
-  <view class="goods">
-    <radio class="rad" color="#e03440" checked='{{item.isSelect}}' />
-    <goods-item item="{{item}}" />
-    <view class="count">
-      <view class="reduce" bindtap="reduce_goods" data-index="{{index}}" data-count='{{item.count}}'>
-        -
+<view class="cart">
+  <block wx:for="{{goods_item}}" wx:key="goods_id">
+    <view class="goods">
+      <view bindtap='select_item' data-index="{{index}}" class="rad">
+        <radio color="#e03440" checked='{{item.isSelect}}' />
       </view>
-      <view class="num">{{item.count}}</view>
-      <view class="add" bindtap="add_goods" data-index='{{index}}'>+</view>
+      <goods-item item="{{item}}" />
+      <view class="count">
+        <view class="reduce iconfont icon-jian" bindtap="goods_count" data-index="{{index}}" data-num='{{-1}}'></view>
+        <view class="num">{{item.count}}</view>
+        <view class="add iconfont icon-jia" bindtap="goods_count" data-index='{{index}}' data-num='{{1}}'></view>
+      </view>
     </view>
-  </view>
-</block>
+  </block>
+</view>
+<view class="empty {{ goods_item.length===0 ?'show' : '' }}">
+  <image class="empty_img" src="/images/cart_empty.gif" />
+  <navigator url="/pages/index/index" class="empty_url" open-type="switchTab">到首页看看吧</navigator>
+</view>
 <view class="footer">
   <view class="footer_left">
-    <radio class="footer_rad" color="#e03440" />
+    <radio class="footer_rad" color="#e03440" bindtap='selectAll' checked='{{selectradio}}' />
     <view class="all">全选</view>
     <view class="add">合计:</view>
-    <view class="footer_price">3999</view>
+    <view class="footer_price">{{totalPrice}}</view>
   </view>
-  <view class="footer_right">去结算(12)</view>
+  <view class="footer_right" bindtap='goToPay'>去结算({{selectCount}})</view>
 </view>

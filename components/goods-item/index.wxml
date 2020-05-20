@@ -1,7 +1,7 @@
 <navigator class="list" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
   <image src="{{item.goods_small_logo || '/images/default.png'}} " class="list_img" />
   <view class="list_right">
-    <view>{{item.goods_name}}</view>
+    <view class="list_right_name">{{item.goods_name}}</view>
     <view class="price">¥{{item.goods_price}}</view>
   </view>
 </navigator>

@@ -1,2 +1,19 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<view class="address">
+  <button bindtap='address_btn' wx:if="{{!addressData.userName}}">获取用户地址</button>
+  <view wx:else>
+    <view class="address_add">
+      {{addressData.provinceName}}{{addressData.cityName}}{{addressData.countyName}}{{addressData.detailInfo}}
+    </view>
+    <view class="userInfo">
+      <view class="name">{{addressData.userName}}</view>
+      <view class="tel">{{addressData.telNumber}}</view>
+    </view>
+  </view>
+</view>
+<view class="goods_title">已选商品</view>
+<view class="goods">
+  <block wx:for="{{goods}}" wx:key="goods_id">
+    <goods-item item='{{item}}' />
+    <view class="count">{{item.count}}</view>
+  </block>
+</view>

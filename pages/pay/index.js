@@ -1,66 +1,48 @@
 // pages/pay/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    addressData: {},
+    goods: []
+  },
+  address_btn() {
+    wx.getSetting({
+      success: ({ authSetting }) => {
+        console.log(authSetting);
+        const scopeAddress = authSetting["scope.address"]
+        if (scopeAddress === undefined || scopeAddress === true) {
+          wx.chooseAddress({
+            success: (result) => {
+              let start = result.telNumber.slice(0, 4)
+              let end = result.telNumber.slice(result.telNumber.length - 3)
+              result.telNumber = start + '****' + end
+              this.setData({ addressData: result })
+
+            }
+          });
+
+        } else {
+          wx.openSetting();
+
+        }
+
+      }
+    });
+
 
   },
+  onShow() {
+    const goods_item = wx.getStorageSync('cart') || [];
+    this.data.goods = goods_item.filter(item => {
+      if (item.isSelect === true) {
+        return item
+      }
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    });
+    console.log(this.data.goods);
+    this.setData({
+      goods: this.data.goods
+    })
 
   }
+
 })

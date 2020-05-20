@@ -21,3 +21,17 @@
 .list .list_right .price {
   color: var(--publicColor);
 }
+.list .list_right .list_right_name {
+  word-break: break-all;
+  font-size: 24rpx;
+  line-height: 33rpx;
+  height: 66rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 这是一个以前的弹性盒子 */
+  display: -webkit-box;
+  /* 在哪一行显示省略号 */
+  -webkit-line-clamp: 2;
+  /* 控制 列的方向 */
+  -webkit-box-orient: vertical;
+}

@@ -1,1 +1,38 @@
-/* pages/pay/index.wxss */
+.address {
+  border-radius: 5rpx;
+  margin: 37rpx 40rpx;
+}
+.address .address_add {
+  font-size: 30rpx;
+  color: #434343;
+  margin-bottom: 18rpx;
+}
+.address .userInfo {
+  display: flex;
+  font-size: 26rpx;
+  color: #434343;
+}
+.address .userInfo .name {
+  min-width: 97rpx;
+  margin-right: 19rpx;
+}
+.goods_title {
+  font-size: 26rpx;
+  margin-left: 46rpx;
+  color: #434343;
+  padding: 26rpx 0;
+}
+.goods {
+  position: relative;
+}
+.goods .count {
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+  font-size: 28rpx;
+  color: #434343;
+}
+.goods .count::before {
+  content: "x";
+  font-size: 90%;
+}

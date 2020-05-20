@@ -4,10 +4,9 @@
   justify-content: space-between;
   padding: 18rpx 25rpx;
   position: relative;
+  border-bottom: 2rpx solid #ccc;
 }
 .goods .rad {
-  width: 35rpx;
-  height: 35rpx;
   padding-right: 35rpx;
 }
 .goods .count {
@@ -18,18 +17,38 @@
   align-items: center;
   color: #8a8a8a;
 }
-.goods .count .reduce,
-.goods .count .add {
-  width: 32rpx;
-  height: 32rpx;
-  line-height: 28rpx;
-  text-align: center;
-  border-radius: 50%;
-  border: 2rpx solid #8a8a8a;
-}
 .goods .count .num {
-  margin: 0 32rpx;
+  min-width: 40rpx;
   font-size: 30rpx;
+  text-align: center;
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  left: 50rpx;
+  top: 0;
+}
+.empty .empty_img {
+  width: 526.4;
+  height: 35.2;
+}
+.empty .empty_url {
+  text-align: center;
+  width: 300rpx;
+  height: 50rpx;
+  color: #8a8a8a;
+  border: 2rpx solid #8a8a8a;
+  border-radius: 25rpx;
+  font-size: 28rpx;
+}
+.show {
+  opacity: 1;
+  z-index: 0;
 }
 .footer {
   height: 83rpx;
@@ -68,7 +87,7 @@
   font-size: 85%;
 }
 .footer .footer_right {
-  width: 150rpx;
+  min-width: 150rpx;
   height: 52rpx;
   line-height: 48rpx;
   border-radius: 26rpx;

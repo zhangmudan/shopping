@@ -4,9 +4,8 @@
   justify-content: space-between;
   padding: 18rpx 25rpx;
   position: relative;
+  border-bottom: 2rpx solid #ccc;
   .rad {
-    width: 35rpx;
-    height: 35rpx;
     padding-right: 35rpx;
   }
   .count {
@@ -16,20 +15,40 @@
     display: flex;
     align-items: center;
     color: #8a8a8a;
-    .reduce,
-    .add {
-      width: 32rpx;
-      height: 32rpx;
-      line-height: 28rpx;
-      text-align: center;
-      border-radius: 50%;
-      border: 2rpx solid #8a8a8a;
-    }
     .num {
-      margin: 0 32rpx;
+      min-width: 40rpx;
       font-size: 30rpx;
+      text-align: center;
     }
   }
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  left: 50rpx;
+  top: 0;
+  .empty_img {
+    width: 658 * 0.8;
+    height: 44 * 0.8;
+  }
+  .empty_url {
+    text-align: center;
+    width: 300rpx;
+    height: 50rpx;
+    color: #8a8a8a;
+    border: 2rpx solid #8a8a8a;
+    border-radius: 25rpx;
+    font-size: 28rpx;
+  }
+}
+.show {
+  opacity: 1;
+  z-index: 0;
 }
 .footer {
   height: 83rpx;
@@ -67,7 +86,7 @@
     }
   }
   .footer_right {
-    width: 150rpx;
+    min-width: 150rpx;
     height: 52rpx;
     line-height: 48rpx;
     border-radius: 26rpx;
