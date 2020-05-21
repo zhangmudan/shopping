@@ -36,3 +36,42 @@
   content: "x";
   font-size: 90%;
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 83rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.footer .price {
+  display: flex;
+  align-items: center;
+}
+.footer .price .price_all {
+  font-size: 28rpx;
+  color: var(--publicColor);
+  padding-left: 23rpx;
+}
+.footer .price .price_all::before {
+  content: "¥";
+  font-size: 90%;
+}
+.footer .btn {
+  min-width: 150rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  text-align: center;
+  border-radius: 26rpx;
+  font-size: 21rpx;
+  background-color: var(--publicColor);
+  color: #fff;
+}
+.footer .disabled {
+  background-color: #999;
+}

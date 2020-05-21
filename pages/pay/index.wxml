@@ -1,9 +1,7 @@
 <view class="address">
-  <button bindtap='address_btn' wx:if="{{!addressData.userName}}">获取用户地址</button>
-  <view wx:else>
-    <view class="address_add">
-      {{addressData.provinceName}}{{addressData.cityName}}{{addressData.countyName}}{{addressData.detailInfo}}
-    </view>
+  <button bindtap='address_btn' wx:if="{{!addressData.userName}}">选择地址</button>
+  <view wx:else bindtap='address_btn'>
+    <view class="address_add">{{addressData.address}}</view>
     <view class="userInfo">
       <view class="name">{{addressData.userName}}</view>
       <view class="tel">{{addressData.telNumber}}</view>
@@ -16,4 +14,13 @@
     <goods-item item='{{item}}' />
     <view class="count">{{item.count}}</view>
   </block>
+</view>
+<view class="footer">
+  <view class="price">
+    <view>合计:</view>
+    <view class="price_all">{{totalPrice}}</view>
+  </view>
+  <view class="btn {{!addressData.userName?'disabled':''}}" bindtap='toPay'>
+    去支付({{selectCount}})
+  </view>
 </view>

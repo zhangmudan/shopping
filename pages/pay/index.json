@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "支付订单",
   "usingComponents": {
     "goods-item": "/components/goods-item/index"
   }

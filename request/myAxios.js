@@ -4,6 +4,19 @@ const baseUrl = 'https://api-hmugo-web.itheima.net/api/public/v1'
 let requestCount = 0
 //axios 是个函数
 const axios = (params) => {
+  const token = wx.getStorageSync('token') || '';
+  if (params.url.indexOf('/my/') > -1) {
+    if (!token) {
+      wx.navigateTo({
+        url: '/pages/auth/index'
+      });
+    } else {
+      params.header = {
+        Authorization: token
+      }
+    }
+
+  }
   requestCount++
   wx.showNavigationBarLoading();
   // axios 函数内部返回 promise 对象
