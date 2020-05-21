@@ -82,6 +82,7 @@ Page({
     })
     wx.setStorageSync("cart", cart);
   },
+  //支付流程
   async toPay() {
     const { addressData } = this.data
     if (!addressData.userName) {
@@ -90,12 +91,6 @@ Page({
         icon: 'none'
       });
       return
-    }
-    const token = wx.getStorageSync('token') || '';
-    if (!token) {
-      wx.navigateTo({
-        url: '/pages/auth/index'
-      });
     } else {
       try {
         //创建订单
@@ -120,7 +115,6 @@ Page({
   },
   //创建订单
   getCreatPay() {
-    const token = wx.getStorageSync('token') || '';
     this.goodsList = this.data.goods.map(item => {
       return {
         goods_price: item.goods_price,
@@ -131,10 +125,6 @@ Page({
     return axios({
       url: '/my/orders/create',
       method: 'POST',
-      header: {
-        Authorization: token
-
-      },
       data: {
         order_price: this.data.totalPrice,
         consignee_addr: this.data.addressData.address,
@@ -145,15 +135,10 @@ Page({
   },
   //获取支付参数
   getPayInfo(order_number) {
-    const token = wx.getStorageSync('token') || '';
     return axios({
       url: '/my/orders/req_unifiedorder',
       method: 'POST',
-      data: { order_number },
-      header: {
-        Authorization: token
-
-      },
+      data: { order_number }
     })
   },
 
@@ -174,15 +159,11 @@ Page({
   },
   //查看订单状态
   checkOrder(order_number) {
-    const token = wx.getStorageSync('token') || '';
     return axios({
       url: '/my/orders/chkOrder',
       method: 'POST',
       data: {
         order_number
-      },
-      header: {
-        Authorization: token
       }
     })
   },

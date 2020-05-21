@@ -50,6 +50,9 @@
   opacity: 1;
   z-index: 0;
 }
+.none {
+  height: 100rpx;
+}
 .footer {
   height: 83rpx;
   width: 750rpx;
@@ -58,6 +61,7 @@
   align-items: center;
   position: fixed;
   bottom: 0;
+  background-color: #fff;
 }
 .footer .footer_left {
   display: flex;

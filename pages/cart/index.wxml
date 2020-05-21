@@ -17,6 +17,7 @@
   <image class="empty_img" src="/images/cart_empty.gif" />
   <navigator url="/pages/index/index" class="empty_url" open-type="switchTab">到首页看看吧</navigator>
 </view>
+<view class="none"></view>
 <view class="footer">
   <view class="footer_left">
     <radio class="footer_rad" color="#e03440" bindtap='selectAll' checked='{{selectradio}}' />
