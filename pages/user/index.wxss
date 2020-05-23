@@ -1,1 +1,22 @@
-/* pages/user/index.wxss */
+.header {
+  height: 750rpx;
+  height: 329rpx;
+}
+.header .headerImg {
+  height: 172rpx;
+  border-radius: 62rpx;
+}
+.nav {
+  height: 144rpx;
+  width: 726rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav .nav_item {
+  text-align: center;
+  font-size: 26rpx;
+}
+.nav .nav_item .iconfont {
+  font-size: 60rpx;
+}
