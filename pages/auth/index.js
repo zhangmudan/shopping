@@ -2,8 +2,9 @@ import axios from '../../request/myAxios'
 Page({
 
   getInfo(e) {
-    // console.log(e.detail);
+    const { userInfo } = e.detail
     const { iv, rawData, signature, encryptedData } = e.detail
+    wx.setStorageSync('userInfo', userInfo);
     wx.login({
       success: (result) => {
         const { code } = result

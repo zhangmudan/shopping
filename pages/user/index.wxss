@@ -1,14 +1,36 @@
 .header {
-  height: 750rpx;
+  position: relative;
+  width: 750rpx;
   height: 329rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.header .headerImg {
+.header .bgimg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: 329rpx;
+  background-repeat: no-repeat;
+  background-size: 200%;
+  opacity: 0.5;
+  z-index: -1;
+}
+.header .user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header .user .headerImg {
+  width: 172rpx;
   height: 172rpx;
-  border-radius: 62rpx;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
 }
 .nav {
   height: 144rpx;
-  width: 726rpx;
+  width: 750rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -19,4 +41,36 @@
 }
 .nav .nav_item .iconfont {
   font-size: 60rpx;
+}
+.kefu,
+.yijian,
+.banben {
+  height: 101rpx;
+  width: 750rpx;
+  padding: 0 52rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #c8c8c8;
+}
+.kefu .left,
+.yijian .left,
+.banben .left {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #434343;
+}
+.kefu .left .iconfont,
+.yijian .left .iconfont,
+.banben .left .iconfont {
+  font-size: 45rpx;
+  margin-right: 28rpx;
+}
+.kefu .right,
+.yijian .right,
+.banben .right {
+  font-size: 26rpx;
+  color: #434343;
 }

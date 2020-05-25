@@ -1,5 +1,14 @@
 <view class="header">
-  <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2354681389,420852882&fm=26&gp=0.jpg" class="headerImg" />
+  <view wx:if="{{userInfo.nickName}}">
+    <view class="bgimg" style="background-image: url('{{userInfo.avatarUrl}}')"></view>
+    <view class="user">
+      <image src="{{userInfo.avatarUrl}}" class="headerImg" />
+      <view>{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <button open-type="getUserInfo" type="primary" class="btn" bindgetuserinfo="getInfo" wx:else>
+    获取用户信息
+  </button>
 </view>
 <view class="nav">
   <view class="nav_item">
@@ -20,10 +29,26 @@
   </view>
 </view>
 <view class="divider"></view>
-<view class="kefu">
-  <button open-type="contact"></button>
+<button open-type="contact" id="btn-kefu" style="display: none"></button>
+<label for="btn-kefu" class="kefu">
+  <view class="left">
+    <view class="iconfont icon-service"></view>
+    联系客服
+  </view>
+  <view class="right">400-618-4000</view>
+</label>
+<button open-type="feedback" style="display: none" id="btn-yijian"></button>
+<label class="yijian" for="btn-yijian">
+  <view class="left">
+    <view class="iconfont icon-yijianfankui"></view>
+    意见反馈
+  </view>
+  <view class="right"></view>
+</label>
+<view class="banben">
+  <view class="left">
+    <view class="iconfont icon-banben"></view>
+    当前版本
+  </view>
+  <view class="right">v4.1.1</view>
 </view>
-<view class="yijian">
-  <button open-type="feedback"></button>
-</view>
-<view class="banben">当前版本</view>
